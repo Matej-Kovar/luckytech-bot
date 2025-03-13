@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="target" onload="test()">
+    <script>
+        async function test (){
+        const target = document.getElementById("target");
+        while (true){
+            let temp = Math.floor(Math.random() * 16777215).toString(16)
+            let hex = "#" + "0".repeat(6 - temp.length) + temp
+            target.style.backgroundColor = hex;
+            await new Promise(r => setTimeout(r, 1));
+        }
+
+        }
+    </script>
+</body>
+</html>
